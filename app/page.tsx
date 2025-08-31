@@ -58,7 +58,7 @@ export default function Home() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <Image
-                src="/meteorite.png"
+                src="/meteorite.svg"
                 alt="Meteorite"
                 width={360}
                 height={360}
@@ -93,7 +93,7 @@ export default function Home() {
               <br />
               <VariableProximityText
                 text={isDark ? "EVANGELISTA" : "STUDENT"}
-                className={`font-funsized text-2xl md:text-3xl lg:text-4xl font-bold ${isDark ? 'text-white' : 'text-gray-800'} tracking-wider`}
+                className={`font-funsized whitespace-nowrap text-2xl md:text-3xl lg:text-4xl font-bold ${isDark ? 'text-white' : 'text-gray-800'} tracking-wider`}
               />
 
             </motion.div>
@@ -101,10 +101,9 @@ export default function Home() {
 
           {/* Astronauta centrale con effetto scroll per tutti */}
           <motion.div 
-            className="flex justify-center items-center min-h-[40vh] md:min-h-[60vh] relative z-15 pt-16 md:pt-32"
+            className="flex justify-center pt-48 items-center min-h-[40vh] md:min-h-[40vh] relative z-15 pt-16 md:pt-56"
             style={{ 
               scale: astronautScale,
-              opacity: astronautOpacity,
             }}
           >
             <motion.div
@@ -128,11 +127,11 @@ export default function Home() {
                 className="cursor-pointer relative"
               >
                 <Image
-                  src="/astronaut.png"
+                  src="/astronaut.svg"
                   alt="Astronauta"
                   width={380}
                   height={380}
-                  className="glow-astronaut md:w-[613px] md:h-[613px]"
+                  className="md:w-[550px] md:h-[550px]"
                 />
                 
             </motion.div>
@@ -177,22 +176,22 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className={`relative pb-4 md:p-2 rounded-full ${isDark ? 'bg-glass-dark' : 'bg-glass-light'}`}>
+            <div className={`relative pb-1 md:p-2 rounded-full ${isDark ? 'bg-glass-dark' : 'bg-glass-light'}`}>
               {isDark ? (
                 <Image
-                  src="/moon.png"
+                  src="/moon.svg"
                   alt="Luna"
                   width={80}
                   height={80}
-                  className="transition-all duration-500 cursor-pointer md:w-[254px] md:h-[254px]"
+                  className="transition-all duration-500 cursor-pointer md:w-[230px] md:h-[230px]"
                 />
               ) : (
                 <Image
-                  src="/sun.png"
+                  src="/sun.svg"
                   alt="Sole"
                   width={80}
                   height={80}
-                  className="transition-all duration-500 animate-pulse cursor-pointer md:w-[254px] md:h-[254px]"
+                  className="transition-all duration-500 animate-pulse cursor-pointer md:w-[230px] md:h-[230px]"
                 />
               )}
             </div>
@@ -203,7 +202,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 100, y: 100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 2, delay: 3 }}
-            className="alien md:absolute fixed bottom-4 md:bottom-8 right-4 md:right-8 z-40 md:z-10 float-medium cursor-pointer"
+            className="alien md:absolute fixed bottom-4 md:bottom-8 right-4 md:right-8 z-40 md:z-10 pb-3 pr-3 cursor-pointer"
             onClick={() => setIsContactOpen(true)}
             drag
             whileHover={{ scale: 1.05 }}
@@ -223,7 +222,7 @@ export default function Home() {
               
               <div className="interactive-uniform relative z-10">
                 <Image
-                  src="/alien.png"
+                  src="/alien.svg"
                   alt="Alieno"
                   width={60}
                   height={60}
