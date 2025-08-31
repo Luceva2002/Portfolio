@@ -1,0 +1,118 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Font personalizzato FunSized */
+@font-face {
+  font-family: 'FunSized';
+  src: url('/FunSized.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font personalizzato Supersonic Rocketship */
+@font-face {
+  font-family: 'Supersonic Rocketship';
+  src: url('/Supersonic_Rocketship.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: 'Orbitron', monospace;
+}
+
+/* Classi base per elementi draggable */
+.img-draggable {
+  cursor: grab !important;
+  user-select: none;
+  touch-action: none;
+}
+
+.img-draggable:active {
+  cursor: grabbing !important;
+}
+
+/* Animazioni di fluttuazione */
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: float-medium 4s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float-fast 3s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Classi per posizionamento desktop */
+.meteorite {
+  @apply absolute top-8 left-8 z-10 ;
+}
+
+/* Background semitrasparenti per il tema */
+.bg-glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.bg-glass-light {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Font personalizzato per titoli */
+.font-funsized {
+  font-family: 'FunSized', Arial, sans-serif;
+}
+
+.font-supersonic {
+  font-family: 'Supersonic Rocketship', Arial, sans-serif;
+}
+
+/* Effetto proximity per il testo */
+.variable-proximity {
+  transition: all 0.3s ease;
+}
+
+.variable-proximity:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+/* Classi unificate per modali */
+.modal-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
