@@ -149,19 +149,17 @@ export default function Home() {
               left: '25%',
             }}
           >
-            <div className={`pt-10 flex items-center md:flex-col text-lg md:text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
-              <span className="mr-4 md:mr-0 md:mb-3 text-xl md:text-2xl">ME</span>
+            <div className={`pt-10 pr-2 flex items-center md:flex-col text-lg md:text-2xl font-bold ${isDark ? 'text-white' : 'text-black'} rotate-[-4deg]`}>
               <motion.div
-                animate={{ 
-                  x: [0, 10, 0],
-                  y: [0, -5, 0] 
-                }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="text-2xl md:text-3xl"
               >
                 <span className="hidden md:inline">→</span>
                 <span className="md:hidden">↑</span>
               </motion.div>
+                <VariableProximityText
+                    text={isDark ? "ME" : "STILL ME"}
+                    className="mr-4 md:mr-0 md:mb-3 text-xl md:text-2xl"
+                  />
             </div>
           </motion.div>
 
