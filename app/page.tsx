@@ -149,7 +149,7 @@ export default function Home() {
               left: '25%',
             }}
           >
-            <div className={`flex items-center md:flex-col text-lg md:text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
+            <div className={`pt-10 flex items-center md:flex-col text-lg md:text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
               <span className="mr-4 md:mr-0 md:mb-3 text-xl md:text-2xl">ME</span>
               <motion.div
                 animate={{ 
@@ -160,7 +160,7 @@ export default function Home() {
                 className="text-2xl md:text-3xl"
               >
                 <span className="hidden md:inline">→</span>
-                <span className="md:hidden ">↑</span>
+                <span className="md:hidden">↑</span>
               </motion.div>
             </div>
           </motion.div>
