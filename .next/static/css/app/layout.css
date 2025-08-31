@@ -698,15 +698,6 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
-.min-h-\[30vh\] {
-  min-height: 30vh;
-}
-.min-h-\[0vh\] {
-  min-height: 0vh;
-}
-.min-h-\[20vh\] {
-  min-height: 20vh;
-}
 .w-8 {
   width: 2rem;
 }
@@ -900,50 +891,26 @@ video {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.pb-4 {
-  padding-bottom: 1rem;
-}
-.pb-5 {
-  padding-bottom: 1.25rem;
-}
-.pr-5 {
-  padding-right: 1.25rem;
-}
-.pt-16 {
-  padding-top: 4rem;
-}
-.pt-32 {
-  padding-top: 8rem;
-}
-.pt-40 {
-  padding-top: 10rem;
-}
-.pt-56 {
-  padding-top: 14rem;
-}
-.pt-5 {
-  padding-top: 1.25rem;
-}
-.pt-52 {
-  padding-top: 13rem;
-}
-.pt-48 {
-  padding-top: 12rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
 .pb-3 {
   padding-bottom: 0.75rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
 .pr-3 {
   padding-right: 0.75rem;
 }
-.pr-4 {
-  padding-right: 1rem;
+.pr-5 {
+  padding-right: 1.25rem;
+}
+.pt-40 {
+  padding-top: 10rem;
 }
 .text-center {
   text-align: center;
@@ -1302,14 +1269,6 @@ body {
     height: 550px;
   }
 
-  .md\:min-h-\[60vh\] {
-    min-height: 60vh;
-  }
-
-  .md\:min-h-\[0vh\] {
-    min-height: 0vh;
-  }
-
   .md\:min-h-\[40vh\] {
     min-height: 40vh;
   }
@@ -1351,8 +1310,8 @@ body {
     padding-right: 0px;
   }
 
-  .md\:pt-56 {
-    padding-top: 14rem;
+  .md\:pt-60 {
+    padding-top: 15rem;
   }
 
   .md\:text-2xl {

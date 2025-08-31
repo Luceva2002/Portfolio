@@ -101,7 +101,7 @@ export default function Home() {
 
           {/* Astronauta centrale con effetto scroll per tutti */}
           <motion.div 
-            className="flex justify-center pt-48 items-center min-h-[40vh] md:min-h-[40vh] relative z-15 pt-16 md:pt-56"
+            className="flex justify-center pt-40 items-center min-h-[40vh] md:min-h-[40vh] relative z-15 md:pt-60"
             style={{ 
               scale: astronautScale,
             }}
