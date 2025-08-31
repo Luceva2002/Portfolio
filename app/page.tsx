@@ -153,7 +153,7 @@ export default function Home() {
               <motion.div
                 className="text-2xl md:text-3xl"
               >
-                <span className="hidden md:inline">→</span>
+                <span className="hidden">→</span>
                 <span className="md:hidden">↑</span>
               </motion.div>
                 <VariableProximityText
