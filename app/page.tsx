@@ -153,8 +153,8 @@ export default function Home() {
               <motion.div
                 className="text-2xl md:text-3xl"
               >
-                <span className="hidden">→</span>
-                <span className="md:hidden">↑</span>
+                <span className="hidden md:inline">→</span>
+                <span className="md:hidden ">↑</span>
               </motion.div>
                 <VariableProximityText
                     text={isDark ? "ME" : "STILL ME"}
