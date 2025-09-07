@@ -25,6 +25,7 @@ export default function Home() {
   }, []);
   
   const containerRef = useRef(null);
+  const dragContainerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -43,7 +44,7 @@ export default function Home() {
         <ParticlesBackground />
         
         {/* Background fissato per il contenuto principale */}
-        <div className="fixed inset-0 z-10">
+        <div ref={dragContainerRef} className="fixed inset-0 z-10">
           {/* Meteorite - solo desktop */}
           <motion.div
             initial={{ x: -200, y: -200, opacity: 0, rotate: -45 }}
@@ -168,9 +169,11 @@ export default function Home() {
             initial={{ opacity: 0, x: 100, y: -100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 2, delay: 1 }}
-            className="toggle md:absolute fixed bottom-4 md:bottom-auto md:top-8 left-4 md:left-auto md:right-8 z-40 md:z-10"
+            className="toggle fixed bottom-4 left-4 md:absolute md:top-8 md:right-8 md:bottom-auto md:left-auto z-40 md:z-10"
             onClick={toggleTheme}
-            drag
+            drag={!isMobile}
+            dragConstraints={dragContainerRef}
+            dragMomentum={false}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -200,9 +203,11 @@ export default function Home() {
             initial={{ opacity: 0, x: 100, y: 100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 2, delay: 3 }}
-            className="alien md:absolute fixed bottom-4 md:bottom-8 right-4 md:right-8 z-40 md:z-10 pb-3 pr-3 cursor-pointer"
+            className="alien fixed bottom-4 right-4 md:absolute md:bottom-8 md:right-8 z-40 md:z-10 pb-3 pr-3 cursor-pointer"
             onClick={() => setIsContactOpen(true)}
-            drag
+            drag={!isMobile}
+            dragConstraints={dragContainerRef}
+            dragMomentum={false}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
