@@ -47,10 +47,10 @@ const CVModal = ({ isOpen, onClose }: CVModalProps) => {
             </div>
 
             {/* PDF Viewer */}
-            <div className="w-full h-[75vh] sm:h-[80vh] rounded-xl overflow-auto overscroll-contain">
+            <div className="cv-wrapper rounded-xl">
               <iframe
-                src="/CVLuceva.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH&zoom=page-width"
-                className="w-full h-full"
+                src="/CVLuceva.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width"
+                className="cv-iframe"
                 title="Curriculum Vitae di Luca Evangelista"
                 loading="lazy"
                 style={{ border: 'none' }}
