@@ -26,7 +26,7 @@ const CVModal = ({ isOpen, onClose }: CVModalProps) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.5, opacity: 0, y: 50 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className={`modal-container rounded-2xl p-4 max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl`}
+            className={`modal-container rounded-2xl p-4 sm:p-6 w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -46,11 +46,13 @@ const CVModal = ({ isOpen, onClose }: CVModalProps) => {
             </div>
 
             {/* PDF Viewer */}
-            <div className="w-full h-[70vh] rounded-xl overflow-hidden">
+            <div className="w-full h-[75vh] sm:h-[80vh] rounded-xl overflow-auto">
               <iframe
-                src="/CVLuceva.pdf#zoom=FitH"
+                src="/CVLuceva.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width"
                 className="w-full h-full"
                 title="Curriculum Vitae di Luca Evangelista"
+                loading="lazy"
+                style={{ border: 'none' }}
               />
             </div>
 

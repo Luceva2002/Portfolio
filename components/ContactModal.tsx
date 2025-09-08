@@ -48,7 +48,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.5, opacity: 0, y: 50 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className={`modal-container rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl`}
+            className={`modal-container rounded-2xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -66,7 +66,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               </button>
             </div>
                           {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4" autoComplete="on">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -74,7 +74,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none transition-colors backdrop-blur-sm"
+                    autoComplete="name"
+                    inputMode="text"
+                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors backdrop-blur-sm"
                     placeholder="Name"
                   />
                   <input
@@ -83,7 +85,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none transition-colors backdrop-blur-sm"
+                    autoComplete="email"
+                    inputMode="email"
+                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors backdrop-blur-sm"
                     placeholder="Your.best@email.com"
                   />
                 </div>
@@ -94,7 +98,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none transition-colors backdrop-blur-sm"
+                  autoComplete="on"
+                  inputMode="text"
+                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors backdrop-blur-sm"
                   placeholder="Object"
                 />
 
@@ -104,7 +110,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none transition-colors resize-none backdrop-blur-sm"
+                  inputMode="text"
+                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors resize-y min-h-[140px] backdrop-blur-sm"
                   placeholder="Your message for the universe..."
                 />
                 
@@ -112,7 +119,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3 rounded-xl bg-white/20 border border-white/30 text-white font-medium transition-all duration-300 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center gap-2"
+                  className="w-full px-6 py-3 rounded-xl bg-white/20 border border-white/30 text-white font-medium transition-all duration-300 hover:bg-white/30 active:scale-[0.99] backdrop-blur-sm flex items-center justify-center gap-2"
                 >
                   <span>🚀</span>
                   Send Message

@@ -215,7 +215,7 @@ export default function Home() {
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-4 -left-4 md:-top-[15px] md:-left-[21px]"
+                className="absolute -top-4 -left-4 md:-top-[15px] md:-left-[21px] pointer-events-none"
               >
                 <CircularText
                   text={!isMobile ? "• STABILISCI • PRIMO • CONTATTO " : "• CONTACT • ME "}
