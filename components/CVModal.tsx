@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+// framer-motion removed for static rendering
 import { useTheme } from './ThemeProvider';
 
 interface CVModalProps {
@@ -12,20 +12,13 @@ const CVModal = ({ isOpen, onClose }: CVModalProps) => {
   const { isDark } = useTheme();
 
   return (
-    <AnimatePresence>
+    <>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+        <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={onClose}
         >
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0, y: 50 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.5, opacity: 0, y: 50 }}
-            transition={{ type: "spring", duration: 0.5 }}
+          <div
             className={`modal-container rounded-2xl p-4 sm:p-6 w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl`}
             onClick={(e) => e.stopPropagation()}
             onTouchStart={(e) => e.stopPropagation()}
@@ -58,10 +51,10 @@ const CVModal = ({ isOpen, onClose }: CVModalProps) => {
             </div>
 
             {/* Footer */}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 

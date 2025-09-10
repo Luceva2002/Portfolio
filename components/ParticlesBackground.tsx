@@ -5,7 +5,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { Engine } from "@tsparticles/engine";
 import { useTheme } from './ThemeProvider';
-import { motion, AnimatePresence } from "framer-motion";
+// framer-motion removed for static background
 
 const ParticlesBackground = ({ className = "" }: { className?: string }) => {
   const { isDark } = useTheme();
@@ -102,29 +102,20 @@ const ParticlesBackground = ({ className = "" }: { className?: string }) => {
   }
 
   return (
-    <AnimatePresence>
-      <motion.div
-        key="particles"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ type: "spring", duration: 2 }}
-        exit={{ opacity: 0 }}
-        className={className}
-      >
-        <Particles
-          id="tsparticles"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-          }}
-          options={options}
-        />
-      </motion.div>
-    </AnimatePresence>
+    <div className={className}>
+      <Particles
+        id="tsparticles"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+        options={options}
+      />
+    </div>
   );
 };
 
