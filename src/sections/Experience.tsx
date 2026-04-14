@@ -15,8 +15,8 @@ const WorkExperience = () => {
         <p className="head-text">My Work Experience</p>
 
         <div className="work-container">
-          <div className="work-canvas">
-            <Canvas>
+        <div className="work-canvas h-[420px] lg:h-auto flex items-center justify-center">
+            <Canvas style={{ width: '100%', height: '100%' }}>
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
