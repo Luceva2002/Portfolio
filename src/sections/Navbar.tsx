@@ -4,12 +4,11 @@ import CardNav, { CardNavItem } from '../components/CardNav';
 const Navbar = () => {
   const items: CardNavItem[] = [
     {
-      label: 'Menu',
+      label: 'About',
       bgColor: '#1C1C21',
       textColor: '#fff',
       links: [
-        { label: 'Home', href: '#home' },
-        { label: 'About', href: '#about' },
+        { label: 'Me', href: '#about' },
       ],
     },
     {

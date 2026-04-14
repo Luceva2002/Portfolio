@@ -4,13 +4,12 @@ import TiltedCard from "../components/TiltedCard";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-28 pb-10 md:pt-32 md:pb-16 px-4 md:px-8 max-w-6xl mx-auto min-h-screen flex items-center">
+    <section id="home" className="pt-28 pb-10 md:pt-32 md:pb-16 w-[90%] max-w-6xl mx-auto min-h-screen flex items-center">
       <div className="grid grid-cols-1 sm:grid-cols-12 items-center gap-8 w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-7 flex flex-col items-start text-left w-full"
+          className="col-span-1 sm:col-span-7 flex flex-col items-start text-left w-full"
         >
           <h1 className="text-white mb-5 text-4xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-white">
@@ -58,10 +57,9 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-5 flex justify-center w-full"
+          className="col-span-1 sm:col-span-5 flex justify-center w-full mt-6 sm:mt-0"
         >
-          <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[400px] lg:h-[400px]">
+          <div className="w-full sm:w-[320px] lg:w-[400px] sm:max-w-[400px] aspect-square relative mx-auto">
             <TiltedCard
               imageSrc="/musichero.png"
               altText="Hero profile"
