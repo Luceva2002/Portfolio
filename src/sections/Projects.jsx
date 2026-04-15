@@ -81,17 +81,17 @@ const Projects = () => {
         </div>
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
+          <Canvas camera={{ position: [2.2, 3, 10], fov: 80 }}>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.4, 0]}>
                   <PortfolioModel modelPath={currentProject.model} />
                 </group>
               </Suspense>
             </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={true} minDistance={2} maxDistance={10} />
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={true} minDistance={2} maxDistance={12} />
           </Canvas>
         </div>
       </div>
