@@ -3,7 +3,6 @@ import About from './sections/About';
 import Footer from './sections/Footer';
 import Navbar from './sections/Navbar';
 import Contact from './sections/Contact';
-//import Clients from './sections/Clients';
 import Projects from './sections/Projects';
 import WorkExperience from './sections/Experience';
 
@@ -14,7 +13,6 @@ const App = () => {
       <Hero />
       <About />
       <Projects />
-      {/* <Clients /> */}
       <WorkExperience />
       <Contact />
       <Footer />
