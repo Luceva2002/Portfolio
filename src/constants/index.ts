@@ -41,7 +41,7 @@ export const myProjects = [
     desc: 'SplitCast is a decentralized web application that simplifies how people manage shared expenses using crypto. Inspired by apps like Tricount and Splitwise, it allows groups to track, split, and settle payments effortlessly on-chain. With swap functionality by 1inch, users can transfer multi-currency crypto payments instantly and transparently.',
     subdesc:
       'Built using Next.js 14, Tailwind CSS, and TypeScript, the application manages shared debts securely through Supabase and connects to the blockchain via wagmi + viem. Deployed on the Arbitrum layer-2 testnet with Solidity smart contracts, SplitCast is optimized for speed, low fees, and a seamless decentralized experience.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+    href: '',
     model: '/models/portfolio5.glb',
     logo: '/assets/project-logo2.png',
     logoStyle: {
@@ -74,10 +74,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'MinisHell',
-    desc: 'MiniShell is a lightweight UNIX command-line interpreter written in C, designed to replicate the core functionalities of Bash. It supports command execution, piping, redirection, environment variables, and built-in commands, offering an efficient way to interact with the Linux operating system through the terminal.',
+    title: 'Cub3d',
+    desc: 'Cub3D is a lightweight raycasting engine written in C, designed to replicate the core functionalities of early 3D games like Wolfenstein 3D. It supports real-time rendering, texture mapping, player movement, and basic input handling, offering an efficient way to explore a pseudo-3D environment from a first-person perspective.',
     subdesc:
-      'Developed under POSIX standards, MiniShell demonstrates how the C language interfaces with the UNIX kernel, managing processes, signals, and file descriptors through low-level system calls. The result is a compact yet powerful shell that mirrors the essential behavior of Bash within a minimal and educational framework.',
+      'Demonstrates how the C language interfaces with graphics libraries, managing rendering loops, memory, and mathematical calculations. The result is a compact yet immersive engine that mirrors the essential behavior of early 3D rendering systems within a minimal and educational framework.',
     href: 'https://boro-coatto-pariolino.vercel.app',
     model: '/models/portfolio5.glb',
     logo: '/assets/project-logo3.png',
@@ -117,7 +117,7 @@ export const myProjects = [
     desc: 'Synergica Tech is a modern corporate website that presents the company\'s consulting services through a clean and professional design. It combines structured layouts, smooth transitions, and minimal aesthetics to communicate reliability, innovation, and technological expertise.',
     subdesc:
       'Built on WordPress with the Salient theme, the site features responsive layouts, motion effects, and custom design elements for a dynamic and polished look. Optimized for performance and accessibility, Synergica Tech delivers a fast, elegant, and trustworthy digital experience.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+    href: '',
     model: '/models/portfolio5.glb',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -154,7 +154,7 @@ export const myProjects = [
     desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
     subdesc:
       'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    href: '',
     model: '/models/portfolio5.glb',
     logo: '/assets/project-logo5.png',
     logoStyle: {
