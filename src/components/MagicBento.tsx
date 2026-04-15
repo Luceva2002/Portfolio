@@ -1,42 +1,9 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
-
-export interface BentoCardProps {
-  color?: string;
-  title?: string;
-  description?: string;
-  label?: string;
-  textAutoHide?: boolean;
-  disableAnimations?: boolean;
-}
-
-export interface BentoProps {
-  textAutoHide?: boolean;
-  enableStars?: boolean;
-  enableSpotlight?: boolean;
-  enableBorderGlow?: boolean;
-  disableAnimations?: boolean;
-  spotlightRadius?: number;
-  particleCount?: number;
-  enableTilt?: boolean;
-  glowColor?: string;
-  clickEffect?: boolean;
-  enableMagnetism?: boolean;
-}
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = '132, 0, 255';
-const MOBILE_BREAKPOINT = 768;
-
-const cardData: BentoCardProps[] = [
-  { color: '#120F17', title: 'Analytics', description: 'Track user behavior', label: 'Insights' },
-  { color: '#120F17', title: 'Dashboard', description: 'Centralized data view', label: 'Overview' },
-  { color: '#120F17', title: 'Collaboration', description: 'Work together seamlessly', label: 'Teamwork' },
-  { color: '#120F17', title: 'Automation', description: 'Streamline workflows', label: 'Efficiency' },
-  { color: '#120F17', title: 'Integration', description: 'Connect favorite tools', label: 'Connectivity' },
-  { color: '#120F17', title: 'Security', description: 'Enterprise-grade protection', label: 'Protection' },
-];
 
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR): HTMLDivElement => {
   const el = document.createElement('div');
@@ -342,83 +309,3 @@ export const GlobalSpotlight: React.FC<{
 
   return null;
 };
-
-const useMobileDetection = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  return isMobile;
-};
-
-const MagicBento: React.FC<BentoProps> = ({
-  textAutoHide = true,
-  enableStars = true,
-  enableSpotlight = true,
-  enableBorderGlow = true,
-  disableAnimations = false,
-  spotlightRadius = DEFAULT_SPOTLIGHT_RADIUS,
-  particleCount = DEFAULT_PARTICLE_COUNT,
-  enableTilt = false,
-  glowColor = DEFAULT_GLOW_COLOR,
-  clickEffect = true,
-  enableMagnetism = true,
-}) => {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const isMobile = useMobileDetection();
-  const shouldDisableAnimations = disableAnimations || isMobile;
-
-  return (
-    <>
-      <style>{`
-        .bento-section { --glow-color: ${glowColor}; --border-color: #2F293A; }
-        .bento-card--border-glow::after {
-          content: ''; position: absolute; inset: 0; padding: 6px;
-          background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-            rgba(${glowColor}, calc(var(--glow-intensity) * 0.8)) 0%,
-            rgba(${glowColor}, calc(var(--glow-intensity) * 0.4)) 30%, transparent 60%);
-          border-radius: inherit;
-          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          mask-composite: exclude; pointer-events: none; z-index: 1;
-        }
-        .bento-card--border-glow:hover { box-shadow: 0 4px 20px rgba(46,24,78,0.4), 0 0 30px rgba(${glowColor}, 0.2); }
-      `}</style>
-
-      {enableSpotlight && (
-        <GlobalSpotlight gridRef={gridRef} disableAnimations={shouldDisableAnimations} enabled={enableSpotlight} spotlightRadius={spotlightRadius} glowColor={glowColor} />
-      )}
-
-      <div className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative" ref={gridRef}>
-        <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
-          {cardData.map((card, index) => {
-            const baseClassName = `bento-card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 ${enableBorderGlow ? 'bento-card--border-glow' : ''}`;
-            const cardStyle = {
-              backgroundColor: card.color || '#120F17',
-              borderColor: 'var(--border-color)',
-              color: '#fff',
-              '--glow-x': '50%', '--glow-y': '50%', '--glow-intensity': '0', '--glow-radius': '200px',
-            } as React.CSSProperties;
-
-            return (
-              <ParticleCard key={index} className={baseClassName} style={cardStyle}
-                disableAnimations={shouldDisableAnimations} particleCount={particleCount}
-                glowColor={glowColor} enableTilt={enableTilt} clickEffect={clickEffect} enableMagnetism={enableMagnetism}>
-                <div className="flex justify-between gap-3 text-white"><span className="text-base">{card.label}</span></div>
-                <div className="flex flex-col text-white">
-                  <h3 className={`font-normal text-base m-0 mb-1 ${textAutoHide ? 'line-clamp-1' : ''}`}>{card.title}</h3>
-                  <p className={`text-xs leading-5 opacity-90 ${textAutoHide ? 'line-clamp-2' : ''}`}>{card.description}</p>
-                </div>
-              </ParticleCard>
-            );
-          })}
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default MagicBento;
