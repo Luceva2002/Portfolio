@@ -1,5 +1,6 @@
 import React from 'react';
 import CardNav, { CardNavItem } from '../components/CardNav';
+import animazioneOcchi from '../../public/animazioneocchi.json';
 
 const Navbar = () => {
   const items: CardNavItem[] = [
@@ -31,12 +32,12 @@ const Navbar = () => {
 
   return (
     <CardNav
-      logo=""
-      logoAlt="Luca"
+      logo="/logo.png"
+      logoAlt=""
       items={items}
       buttonBgColor="#fff"
       buttonTextColor="#000"
-      className="fixed z-50"
+      lottieAnimation={animazioneOcchi}
     />
   );
 };

@@ -12,21 +12,21 @@ const Hero = () => {
           className="col-span-1 sm:col-span-7 flex flex-col items-start text-left w-full"
         >
           <h1 className="text-white mb-5 text-4xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-white">
-              Hello, I&apos;m{" "}
+            <span className="text-white ">
+              Hi, I&apos;m 👋{" "}
             </span>
             <br></br>
             <span className="inline-block">
               <TypeAnimation
                 sequence={[
-                  "Luca",
-                  1000,
+                  "Luca Evangelista",
+                  3000,
                   "Coding Student",
-                  1000,
+                  3000,
                   "Web Developer",
-                  1000,
+                  3000,
                   "UI/UX Designer",
-                  1000,
+                  3000,
                 ]}
                 wrapper="span"
                 speed={50}
@@ -63,14 +63,13 @@ const Hero = () => {
             <TiltedCard
               imageSrc="/musichero.png"
               altText="Hero profile"
-              captionText="Hello!"
               containerHeight="100%"
               containerWidth="100%"
               imageHeight="100%"
               imageWidth="100%"
               rotateAmplitude={12}
               scaleOnHover={1.05}
-              showTooltip={true}
+              showTooltip={false}
               showMobileWarning={false}
               displayOverlayContent={false}
             />
